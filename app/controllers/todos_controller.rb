@@ -49,7 +49,7 @@ class TodosController < ApplicationController
             flash[:notice] = "Completed!"
             redirect_to todos_path
         else
-            render 'index'
+            redirect_to todos_path
         end  
     end
 
