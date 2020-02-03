@@ -1,8 +1,9 @@
 <div class="blog-post">
         <h2 class="blog-post-title"><%= @todo.description %></h2>
-        <p class="blog-post-meta"><%= @todo.created_at %></p>
+        <p class="blog-post-meta font-weight-bold">Added at: <%= @todo.created_at %></p>
         <hr>
-        <p><%= @todo.completed %></p>
+        <p class="font-weight-light"><%= @todo.completed %></p>
+        <div class="center">
+          [ <%= link_to "Back to Todos listing", root_path %> ]
+        </div>
 </div>
-
-<%= link_to "Back to ToDos listing", root_path%>
