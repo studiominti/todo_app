@@ -41,6 +41,18 @@ class TodosController < ApplicationController
         end
     end
 
+    def complete
+        @todo = Todo.find(params[:id])
+        if @todo.completed == false
+            @todo.completed = true
+            @todo.save
+            flash[:notice] = "Completed!"
+            redirect_to todos_path
+        else
+            render 'index'
+        end  
+    end
+
     private
     def todo_params
         params.require(:todo).permit(:description, :completed)
