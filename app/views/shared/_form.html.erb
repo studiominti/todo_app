@@ -1,3 +1,4 @@
+<%= render 'shared/errors' %>
 <div class='row'>
  <div class="col-md-6 offset-md-3">
 <%= form_with(model: @todo, local: true ) do |f| %>
@@ -5,11 +6,14 @@
   <%= f.label :description %>
   <%= f.text_area :description, class:'form-control' %>
   </div>
-  <div class="form-check">
+  <div class="form-check pb-3">
   <%= f.check_box :completed, class:'form-check-input' %>
   <%= f.label :completed, class:'form-check-label', for:'completed' %>
   </div>
   <%= f.submit class: 'btn btn-info' %>
 <% end %>
+  <div class="center">
+    [ <%= link_to "Back to Todos listing", root_path %> ]
+  </div>
   </div>
 </div>
