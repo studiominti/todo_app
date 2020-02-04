@@ -42,9 +42,11 @@ class TodosController < ApplicationController
         if @todo.completed == false
             @todo.completed = true
             @todo.save
-            flash[:notice] = "Completed!"
+            flash[:notice] = "Completed! Keep it up! "
             redirect_to todos_path
         else
+            @todo.completed = false
+            @todo.save
             redirect_to todos_path
         end  
     end

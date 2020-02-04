@@ -2,7 +2,11 @@
         <h2 class="blog-post-title font-weight-bold"><%= @todo.description %></h2>
         <p class="blog-post-meta font-weight-bolder">Added at: <%= @todo.created_at %></p>
         <hr>
-        <p class="font-weight-light">Completed: <%= @todo.completed %></p>
+        <% if @todo.completed == true %>
+        <%=link_to "COMPLETED", todos_complete_path(@todo), class:'btn btn-outline-success' %>
+        <% else %>
+        <%=link_to "UNFINISHED", todos_complete_path(@todo), class:'btn btn-outline-warning' %>
+        <%end%>
         <div class="center">
           [ <%= link_to "Back to Todos listing", root_path %> ]
         </div>
